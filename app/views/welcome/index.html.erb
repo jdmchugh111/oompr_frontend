@@ -1,0 +1,8 @@
+<h1>oompr</h1>
+
+<h3>Where do you want to live?</h3>
+
+<%= form_tag(search_path, method: :get) do %>
+  <%= text_field_tag :city, params[:city] %>
+  <%= submit_tag "Search" %>
+<% end %>
