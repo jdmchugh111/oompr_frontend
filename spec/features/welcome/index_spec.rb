@@ -8,7 +8,7 @@ RSpec.describe 'Landing Page, Welcome Index' do
       expect(page).to have_content('oompr')
     end
 
-    it 'I see a search field where I can enter a city name' do # context?
+    it 'I see a search field where I can enter a city name' do
       visit root_path
 
       expect(page).to have_field(:city)
