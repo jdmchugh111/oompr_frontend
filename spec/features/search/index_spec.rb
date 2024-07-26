@@ -1,4 +1,65 @@
 require 'rails_helper'
 
 RSpec.describe 'Search Results - Index' do
+  describe 'As a visitor, once I have entered a city and clicked the search button on the landing page' do
+    it "shows the search results page with the listings sorted by most expensive, each listing includes: 
+    price, address, # bedrooms, # bathrooms, square footage, and all photos, each listing is a link to that
+    listing's show page", :vcr do
+      visit root_path
+
+      fill_in :city, with: 'Houston'
+      click_button 'Search'
+
+      within('.listings-container') do
+        within(first('.listing-item')) do
+          within('.photos') do  
+            expect(page).to have_css("img[src*='https://s3-us-west-2.amazonaws.com/cdn.simplyrets.com/properties/trial/home4.jpg'][alt='Listing Image']")
+          end
+          within('.price') do
+            expect(page).to have_content("$22,790,088.00")
+          end
+          within('.listing-info') do
+            expect(page).to have_content('60843 South GAITHER WAY CT #18393, Houston, Texas 77532')
+            expect(page).to have_content('4')
+            expect(page).to have_content('2')
+            expect(page).to have_content('1623 m²')
+          end
+
+          expect(page).to have_selector(".stretched-link")
+          find(".stretched-link").click
+      
+          expect(current_path).to eq(listing_path(1005254))
+        end
+
+        expect("$22,790,088.00").to appear_before("$20,714,261.00")
+        expect("$20,714,261.00").to appear_before("$20,683,471.00") 
+      end
+    end
+  end
+
+  describe "sad path - no listings found", :vcr do
+    it "shows a flash message saying that no listings were found,
+    redirects to landing page" do
+      visit root_path
+
+      fill_in :city, with: 'asdf'
+      click_button 'Search'
+
+      expect(page).to have_content('No listings found. Please try again.')
+      expect(current_path).to eq(root_path)
+    end
+  end
+
+  describe "sad path - no listings found - empty search", :vcr do
+    it "shows a flash message saying that no listings were found,
+    redirects to landing page" do
+      visit root_path
+
+      fill_in :city, with: ''
+      click_button 'Search'
+
+      expect(page).to have_content('No listings found. Please try again.')
+      expect(current_path).to eq(root_path)
+    end
+  end
 end

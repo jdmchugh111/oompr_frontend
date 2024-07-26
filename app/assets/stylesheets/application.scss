@@ -13,3 +13,30 @@
  *= require_tree .
  *= require_self
  */
+@import "bootstrap";
+@import "font-awesome";
+
+.card-custom {
+  margin-bottom: 20px;
+}
+.reality-check-btn {
+  margin-top: 20px;
+}
+.container-custom {
+  padding-top: 20px;
+  text-align: center;
+}
+.oompr-title {
+  font-size: 3rem;
+  color: #DC3444;
+}
+
+.custom-link {
+  color: black;
+  text-decoration: none;
+}
+
+.custom-link:hover {
+  color: #DC3444;
+  text-decoration: underline;
+}
