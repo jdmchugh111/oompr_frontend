@@ -46,6 +46,10 @@ gem "bootsnap", require: false
 
 gem "faraday"
 
+gem 'bootstrap', '~> 5.1.3'
+gem 'sassc-rails'
+gem 'font-awesome-sass', '~> 6.0'
+
 group :test do
   gem "webmock"
   gem "vcr"
