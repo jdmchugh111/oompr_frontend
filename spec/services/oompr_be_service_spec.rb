@@ -58,4 +58,84 @@ RSpec.describe OomprBeService do
       end
     end
   end
+
+  describe "#search_listings_by_city", :vcr do
+    it "returns an array of listings data from city searched" do
+      listings = OomprBeService.new.search_listings_by_city("Houston")
+
+      expect(listings).to be_an Array
+
+      listings.each do |listing|
+        expect(listing).to be_a Hash
+
+        expect(listing).to have_key(:id)
+        expect(listing[:id]).to be_a String
+
+        expect(listing).to have_key(:type)
+        expect(listing[:type]).to eq("listing")
+
+        expect(listing).to have_key(:attributes)
+        expect(listing[:attributes]).to be_a Hash
+
+        expect(listing[:attributes]).to have_key(:price)
+        expect(listing[:attributes][:price]).to be_an Integer
+
+        expect(listing[:attributes]).to have_key(:address)
+        expect(listing[:attributes][:address]).to be_a String
+
+        expect(listing[:attributes]).to have_key(:bedrooms)
+        expect(listing[:attributes][:bedrooms]).to be_an Integer
+
+        expect(listing[:attributes]).to have_key(:bathrooms)
+        expect(listing[:attributes][:bathrooms]).to be_an Integer
+
+        expect(listing[:attributes]).to have_key(:sqft)
+        expect(listing[:attributes][:sqft]).to be_an Integer
+
+        expect(listing[:attributes]).to have_key(:photos)
+        expect(listing[:attributes][:photos]).to be_an Array
+        listing[:attributes][:photos].each do |photo|
+          expect(photo).to be_a String
+        end
+      end
+    end
+  end
+
+  describe "#get_listing_by_id", :vcr do
+    it "returns a Listing object with an id that matches id passed in" do
+      listing = OomprBeService.new.get_listing_by_id(1005254)
+      
+      expect(listing).to be_a Hash
+
+      expect(listing).to have_key(:id)
+      expect(listing[:id]).to be_a String
+
+      expect(listing).to have_key(:type)
+      expect(listing[:type]).to eq("listing")
+
+      expect(listing).to have_key(:attributes)
+      expect(listing[:attributes]).to be_a Hash
+
+      expect(listing[:attributes]).to have_key(:price)
+      expect(listing[:attributes][:price]).to be_an Integer
+
+      expect(listing[:attributes]).to have_key(:address)
+      expect(listing[:attributes][:address]).to be_a String
+
+      expect(listing[:attributes]).to have_key(:bedrooms)
+      expect(listing[:attributes][:bedrooms]).to be_an Integer
+
+      expect(listing[:attributes]).to have_key(:bathrooms)
+      expect(listing[:attributes][:bathrooms]).to be_an Integer
+
+      expect(listing[:attributes]).to have_key(:sqft)
+      expect(listing[:attributes][:sqft]).to be_an Integer
+
+      expect(listing[:attributes]).to have_key(:photos)
+      expect(listing[:attributes][:photos]).to be_an Array
+      listing[:attributes][:photos].each do |photo|
+        expect(photo).to be_a String
+      end
+    end
+  end
 end

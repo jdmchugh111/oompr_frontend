@@ -37,11 +37,11 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - b9de6075-5e35-498b-b06a-bd50b9afa4fe
+      - cc2f533c-6b79-498b-8dbe-87edd7e0e6e8
       X-Runtime:
-      - '0.206799'
+      - '0.227936'
       Server-Timing:
-      - start_processing.action_controller;dur=0.00, process_action.action_controller;dur=201.83
+      - start_processing.action_controller;dur=0.00, process_action.action_controller;dur=225.36
       Content-Length:
       - '4325'
     body:
@@ -59,7 +59,7 @@ http_interactions:
         East GRANICUS Mews #I-7, Houston, Texas 77018","bedrooms":6,"bathrooms":2,"sqft":2955,"photos":["https://s3-us-west-2.amazonaws.com/cdn.simplyrets.com/properties/trial/home14.jpg","https://s3-us-west-2.amazonaws.com/cdn.simplyrets.com/properties/trial/home-inside-14.jpg"]}},{"id":"1005255","type":"listing","attributes":{"price":6070556,"address":"36992
         West Georgetown(lot 18) Boulevard #C 104, Houston, Texas 77429","bedrooms":4,"bathrooms":6,"sqft":1562,"photos":["https://s3-us-west-2.amazonaws.com/cdn.simplyrets.com/properties/trial/home14.jpg","https://s3-us-west-2.amazonaws.com/cdn.simplyrets.com/properties/trial/home-inside-14.jpg"]}},{"id":"1005229","type":"listing","attributes":{"price":80658,"address":"92270
         South 2991 Bryant ST Pl #1573, Houston, Texas 77043","bedrooms":1,"bathrooms":2,"sqft":1562,"photos":["https://s3-us-west-2.amazonaws.com/cdn.simplyrets.com/properties/trial/home4.jpg","https://s3-us-west-2.amazonaws.com/cdn.simplyrets.com/properties/trial/home-inside-4.jpg"]}}]}'
-  recorded_at: Sat, 27 Jul 2024 01:55:01 GMT
+  recorded_at: Sat, 27 Jul 2024 01:54:59 GMT
 - request:
     method: get
     uri: http://localhost:3000/api/v1/properties/1005254
@@ -97,16 +97,16 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 97c55357-f0f4-45fe-bd92-7cc8255127f4
+      - 86de773b-fe18-4008-9016-d7aa2a4f48d3
       X-Runtime:
-      - '0.194551'
+      - '0.212395'
       Server-Timing:
-      - start_processing.action_controller;dur=0.00, process_action.action_controller;dur=190.99
+      - start_processing.action_controller;dur=0.00, process_action.action_controller;dur=208.55
       Content-Length:
       - '366'
     body:
       encoding: UTF-8
       string: '{"data":{"id":"1005254","type":"listing","attributes":{"price":22790088,"address":"60843
         South GAITHER WAY CT #18393, Houston, Texas 77532","bedrooms":4,"bathrooms":2,"sqft":1623,"photos":["https://s3-us-west-2.amazonaws.com/cdn.simplyrets.com/properties/trial/home4.jpg","https://s3-us-west-2.amazonaws.com/cdn.simplyrets.com/properties/trial/home-inside-4.jpg"]}}}'
-  recorded_at: Sat, 27 Jul 2024 01:55:01 GMT
+  recorded_at: Sat, 27 Jul 2024 01:55:00 GMT
 recorded_with: VCR 6.2.0
