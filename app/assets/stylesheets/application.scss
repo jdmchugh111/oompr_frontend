@@ -40,3 +40,13 @@
   color: #DC3444;
   text-decoration: underline;
 }
+
+.oompr-title-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.oompr-title-link:hover {
+  color: inherit; /* Ensures the color doesn't change on hover */
+  text-decoration: none; /* Ensures no underline on hover */
+}

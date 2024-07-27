@@ -1,5 +1,5 @@
 <div class="container container-custom">
-  <h1 class="oompr-title">oompr</h1>
+  <h1 class="oompr-title"><%= link_to 'oompr', root_path, class: 'oompr-title-link' %></h1>
   <div class="row">
     <div class="col-md-6 offset-md-3">
       <div class="listings-container">
@@ -48,5 +48,7 @@
       </div>
     </div>
   </div>
-  <button class="btn btn-danger btn-lg reality-check-btn">Reality Check</button>
+  <div class="rc-button">
+    <button class="btn btn-danger btn-lg reality-check-btn">Reality Check</button>
+  </div>
 </div>
