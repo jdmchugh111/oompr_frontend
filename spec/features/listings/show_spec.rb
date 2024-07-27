@@ -17,9 +17,9 @@ RSpec.describe "Listing Show Page" do
       expect(current_path).to eq(listing_path(1005254))
     end
 
-    it 'displays the title as a link to the landing page', :vcr do
+    it 'title is a link to the landing page', :vcr do
       visit listing_path(1005254)
-      
+
       within('h1.oompr-title') do
         title_link = find('a.oompr-title-link')
         expect(title_link[:href]).to eq(root_path)
@@ -58,13 +58,3 @@ RSpec.describe "Listing Show Page" do
     end
   end
 end
-
-# FE: Show Page
-
-# As a visitor, when I'm on the search results page
-# When I click on a listing I'm brought to that listing's show page
-# On the listing show page I see all the same attributes
-# The photos are displayed in a gallery
-# And I should see a "Reality Check" button
-# And there is a heart icon that I can click to save the listing to favorites (if signed in)
-# If not signed in, clicking the heart prompts me to create an account or sign in
