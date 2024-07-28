@@ -8,6 +8,9 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 
+    <!-- Custom CSS -->
+    <%= stylesheet_link_tag 'custom', media: 'all', 'data-turbolinks-track': 'reload' %>
+
     <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 
@@ -29,6 +32,46 @@
       $(document).on('turbolinks:load', function() {
         $('[data-fancybox="gallery"]').fancybox({
           // Add any custom options here
+        });
+      });
+    </script>
+
+    <! -- Auto Scroll to Form -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        var collapseElement = document.getElementById('incomeFormContainer');
+        var realityCheckButton = document.querySelector('.reality-check-btn');
+
+        realityCheckButton.addEventListener('click', function() {
+          $(collapseElement).on('shown.bs.collapse', function() {
+          collapseElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          $(collapseElement).off('shown.bs.collapse'); // Unbind the event after it's fired
+          });
+        });
+      });
+    </script>
+
+    <!-- Favorite Icon -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        var favoriteIcons = document.querySelectorAll('.favorite-icon');
+
+        favoriteIcons.forEach(function(icon) {
+          icon.addEventListener('click', function(event) {
+            event.preventDefault();
+            var heartIcon = this.querySelector('i');
+            var isFavorite = this.getAttribute('data-favorite') === 'true';
+
+            if (isFavorite) {
+              heartIcon.classList.remove('fas');
+              heartIcon.classList.add('far');
+              this.setAttribute('data-favorite', 'false');
+            } else {
+              heartIcon.classList.remove('far');
+              heartIcon.classList.add('fas');
+              this.setAttribute('data-favorite', 'true');
+            }
+          });
         });
       });
     </script>
