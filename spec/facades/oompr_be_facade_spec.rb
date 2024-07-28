@@ -28,4 +28,16 @@ RSpec.describe OomprBeFacade do
       expect(listing).to be_a Listing
     end
   end
+
+  describe "#reality_check" do
+    it "returns an array of Listing objects that match the city and price range", :vcr do
+      rc_listings = OomprBeFacade.new.reality_check("Houston", 375000)
+
+      rc_listings.each do |listing|
+        expect(listing).to be_a Listing
+      end
+
+      expect(rc_listings[0].price).to be <= 20000000
+    end
+  end
 end
