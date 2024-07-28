@@ -1,4 +1,8 @@
 <!DOCTYPE html>
+<% if current_user.nil?  %>
+  <%= link_to 'Log In', '/auth/google_oauth2' %>
+<% end %>
+    
 <html>
   <head>
     <title>OomprFrontend</title>
