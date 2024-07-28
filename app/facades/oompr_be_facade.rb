@@ -4,11 +4,14 @@ class OomprBeFacade
   end
 
   def search_listings_by_city(city)
-    results = @service.search_listings_by_city(city)
-    
-    listings_data = results[:data]
+    listings_data = @service.search_listings_by_city(city)
     listings_data.map do |listing|
       Listing.new(listing)
     end
+  end
+
+  def get_listing_by_id(id)
+    listing = @service.get_listing_by_id(id)
+    Listing.new(listing)
   end
 end

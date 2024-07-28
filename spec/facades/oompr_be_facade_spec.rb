@@ -19,4 +19,13 @@ RSpec.describe OomprBeFacade do
       end
     end
   end
+
+  describe "#get_listing_by_id" do
+    it "returns a Listing object", :vcr do
+      facade = OomprBeFacade.new
+      listing = facade.get_listing_by_id(1005254)
+
+      expect(listing).to be_a Listing
+    end
+  end
 end

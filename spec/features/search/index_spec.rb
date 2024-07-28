@@ -35,6 +35,23 @@ RSpec.describe 'Search Results - Index' do
         expect("$20,714,261.00").to appear_before("$20,683,471.00") 
       end
     end
+
+    it 'displays the title as a link to the landing page', :vcr do
+      visit listing_path(1005254)
+      
+      within('h1.oompr-title') do
+        title_link = find('a.oompr-title-link')
+        expect(title_link[:href]).to eq(root_path)
+      end
+    end
+
+    it "shows a 'Reality Check' button", :vcr do
+      visit listing_path(1005254)
+
+      within('.rc-button') do
+        expect(page).to have_button("Reality Check")
+      end
+    end
   end
 
   describe "sad path - no listings found", :vcr do
