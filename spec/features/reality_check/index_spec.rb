@@ -32,7 +32,7 @@ RSpec.describe 'Reality Check Results - Index' do
             expect(page).to have_content('68827 South 99 CT Estates #783, Houston, Texas')
             expect(page).to have_content('5')
             expect(page).to have_content('4')
-            expect(page).to have_content('3477 m²')
+            expect(page).to have_content('3477 ft²')
           end
 
           expect(page).to have_selector(".stretched-link")

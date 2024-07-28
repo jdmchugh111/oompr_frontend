@@ -22,7 +22,7 @@ RSpec.describe 'Search Results - Index' do
             expect(page).to have_content('60843 South GAITHER WAY CT #18393, Houston, Texas 77532')
             expect(page).to have_content('4')
             expect(page).to have_content('2')
-            expect(page).to have_content('1623 m²')
+            expect(page).to have_content('1623 ft²')
           end
 
           expect(page).to have_selector(".stretched-link")
@@ -90,7 +90,7 @@ RSpec.describe 'Search Results - Index' do
     it "clicking the 'Reality Check' button shows a number field and prompts the user to enter their monthly income,
     when the submit button is clicked, a new set of results show that are affordable based on income entered", :vcr do
       visit root_path
-      
+
       fill_in :city, with: 'Houston'
       click_button 'Search'
 
