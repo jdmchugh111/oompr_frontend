@@ -10,4 +10,9 @@ Rails.application.routes.draw do
 
   root "welcome#index"
   get "/search", to: "search#index", as: :search
+
+
+  get "/auth/:provider/callback" => "sessions#create"
+  # post "/signin" => "sessions#new"
+  # get "/signout" => "sessions#destroy"
 end
