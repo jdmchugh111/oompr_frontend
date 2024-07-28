@@ -46,8 +46,13 @@ gem "bootsnap", require: false
 
 gem "faraday"
 
+gem 'omniauth'
 gem 'omniauth-google-oauth2'
 gem "figaro"
+
+# gem "auto-session-timeout"
+gem "sassc"
+
 
 
 group :test do
@@ -69,6 +74,7 @@ end
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
+  gem "sass-rails"
 
   gem "hotwire-livereload"
   #this gem will update anything live the only thing after doing the bundle install is doing rails livereload:install
