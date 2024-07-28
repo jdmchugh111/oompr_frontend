@@ -48,7 +48,21 @@
       </div>
     </div>
   </div>
-  <div class="rc-button">
-    <button class="btn btn-danger btn-lg reality-check-btn">Reality Check</button>
+
+<!-- Button -->
+<div class="rc-button">
+  <button type="button" class="btn btn-danger btn-lg reality-check-btn" data-toggle="collapse" data-target="#incomeFormContainer" aria-expanded="false" aria-controls="incomeFormContainer" data-turbolinks="false">Reality Check</button>
+</div>
+
+<!-- Collapsible Form -->
+<div class="collapse" id="incomeFormContainer" style="margin-top: 20px;">
+  <div class="card card-body">
+    <%= form_with url: reality_check_index_path, method: :get, local: true do |form| %>
+      <div class="form-group">
+        <%= form.label :monthly, "Enter your monthly income:" %>
+        <%= form.number_field :monthly, class: "form-control", required: true, min: 0 %>
+      </div>
+      <%= form.submit "Submit", class: "btn btn-primary" %>
+    <% end %>
   </div>
 </div>

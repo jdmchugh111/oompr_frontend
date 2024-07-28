@@ -9,10 +9,14 @@ class OomprBeService
   end
 
   def search_listings_by_city(city)
-    get_url("properties?city=#{city}")[:data]
+    get_url("properties?city=#{city}")
   end
 
   def get_listing_by_id(id)
-    get_url("properties/#{id}")[:data]
+    get_url("properties/#{id}")
+  end
+
+  def reality_check(city, monthly)
+    get_url("properties?city=#{city}&monthly=#{monthly}")
   end
 end

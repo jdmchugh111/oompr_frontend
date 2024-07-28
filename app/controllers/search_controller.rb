@@ -6,7 +6,7 @@ class SearchController < ApplicationController
       flash[:notice] = "No listings found. Please try again." 
       redirect_to root_path
     end
-    cookies[:city] = params[:city]
+    cookies[:city] = search_params[:city]
   end
   
   private

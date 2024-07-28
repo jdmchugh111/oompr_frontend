@@ -11,5 +11,7 @@ Rails.application.routes.draw do
   root "welcome#index"
   get "/search", to: "search#index", as: :search
 
+  resources :reality_check, only: [:index]
+
   resources :listings, only: [:show]
 end
