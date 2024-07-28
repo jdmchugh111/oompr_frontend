@@ -37,19 +37,14 @@ RSpec.describe 'Search Results - Index' do
     end
 
     it 'displays the title as a link to the landing page', :vcr do
-      visit listing_path(1005254)
+      visit root_path
+
+      fill_in :city, with: 'Houston'
+      click_button 'Search'
       
       within('h1.oompr-title') do
         title_link = find('a.oompr-title-link')
         expect(title_link[:href]).to eq(root_path)
-      end
-    end
-
-    it "shows a 'Reality Check' button", :vcr do
-      visit listing_path(1005254)
-
-      within('.rc-button') do
-        expect(page).to have_button("Reality Check")
       end
     end
   end
@@ -77,6 +72,41 @@ RSpec.describe 'Search Results - Index' do
 
       expect(page).to have_content('No listings found. Please try again.')
       expect(current_path).to eq(root_path)
+    end
+  end
+
+  describe "Realty Check", :vcr do
+    it "shows a 'Reality Check' button", :vcr do
+      visit root_path
+
+      fill_in :city, with: 'Houston'
+      click_button 'Search'
+
+      within('.rc-button') do
+        expect(page).to have_button("Reality Check")
+      end
+    end
+
+    it "clicking the 'Reality Check' button shows a number field and prompts the user to enter their monthly income,
+    when the submit button is clicked, a new set of results show that are affordable based on income entered", :vcr do
+      visit root_path
+      
+      fill_in :city, with: 'Houston'
+      click_button 'Search'
+
+      expect(current_path).to eq(search_path)
+
+      click_button "Reality Check"
+
+      expect(page).to have_content("Enter your monthly income:")
+
+      expect(page).to have_field("monthly")
+      fill_in :monthly, with: 375000
+
+      expect(page).to have_button("Submit")
+      click_button "Submit"
+
+      expect(current_path).to eq(reality_check_index_path)
     end
   end
 end

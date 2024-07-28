@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://localhost:3000/api/v1/properties?city=Houston
+    uri: http://localhost:3000/api/v1/properties?city=Houston&monthly=375000
     body:
       encoding: US-ASCII
       string: ''
@@ -33,24 +33,20 @@ http_interactions:
       Vary:
       - Accept
       Etag:
-      - W/"0f1ecc3ec30447524052781383ffcf49"
+      - W/"b5ebeb90128f3f2c4e280ffdf189e882"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - a91f4f9f-6f98-4e71-a0d4-245fd51b63e6
+      - c689666f-287d-4f54-ac97-a840133c9cd8
       X-Runtime:
-      - '0.203869'
+      - '0.227941'
       Server-Timing:
-      - start_processing.action_controller;dur=0.00, process_action.action_controller;dur=199.16
+      - start_processing.action_controller;dur=0.00, process_action.action_controller;dur=223.08
       Content-Length:
-      - '4325'
+      - '2897'
     body:
       encoding: UTF-8
-      string: '{"data":[{"id":"1005254","type":"listing","attributes":{"price":22790088,"address":"60843
-        South GAITHER WAY CT #18393, Houston, Texas 77532","bedrooms":4,"bathrooms":2,"sqft":1623,"photos":["https://s3-us-west-2.amazonaws.com/cdn.simplyrets.com/properties/trial/home4.jpg","https://s3-us-west-2.amazonaws.com/cdn.simplyrets.com/properties/trial/home-inside-4.jpg"]}},{"id":"1005192","type":"listing","attributes":{"price":20714261,"address":"74434
-        East Sweet Bottom Br #18393, Houston, Texas 77096","bedrooms":2,"bathrooms":5,"sqft":1043,"photos":["https://s3-us-west-2.amazonaws.com/cdn.simplyrets.com/properties/trial/home9.jpg","https://s3-us-west-2.amazonaws.com/cdn.simplyrets.com/properties/trial/home-inside-9.jpg"]}},{"id":"1005191","type":"listing","attributes":{"price":20683471,"address":"86469
-        West Zenith Cliff #F16, Houston, Texas 77007","bedrooms":4,"bathrooms":3,"sqft":5269,"photos":["https://s3-us-west-2.amazonaws.com/cdn.simplyrets.com/properties/trial/home15.jpg","https://s3-us-west-2.amazonaws.com/cdn.simplyrets.com/properties/trial/home-inside-15.jpg"]}},{"id":"1005199","type":"listing","attributes":{"price":20220909,"address":"15804
-        South FM 3 Boulevard #1795, Houston, Texas 77429","bedrooms":3,"bathrooms":1,"sqft":5607,"photos":["https://s3-us-west-2.amazonaws.com/cdn.simplyrets.com/properties/trial/home6.jpg","https://s3-us-west-2.amazonaws.com/cdn.simplyrets.com/properties/trial/home-inside-6.jpg"]}},{"id":"1005172","type":"listing","attributes":{"price":18730333,"address":"68827
+      string: '{"data":[{"id":"1005172","type":"listing","attributes":{"price":18730333,"address":"68827
         South 99 CT Estates #783, Houston, Texas 77375","bedrooms":5,"bathrooms":4,"sqft":3477,"photos":["https://s3-us-west-2.amazonaws.com/cdn.simplyrets.com/properties/trial/home4.jpg","https://s3-us-west-2.amazonaws.com/cdn.simplyrets.com/properties/trial/home-inside-4.jpg"]}},{"id":"1005245","type":"listing","attributes":{"price":18065342,"address":"52876
         North Newark Blvd B Trace #2035, Houston, Texas 77429","bedrooms":4,"bathrooms":6,"sqft":3534,"photos":["https://s3-us-west-2.amazonaws.com/cdn.simplyrets.com/properties/trial/home7.jpg","https://s3-us-west-2.amazonaws.com/cdn.simplyrets.com/properties/trial/home-inside-7.jpg"]}},{"id":"1005240","type":"listing","attributes":{"price":17236623,"address":"2976
         North British Colony Lndg #12306, Houston, Texas 77377","bedrooms":3,"bathrooms":5,"sqft":4553,"photos":["https://s3-us-west-2.amazonaws.com/cdn.simplyrets.com/properties/trial/home7.jpg","https://s3-us-west-2.amazonaws.com/cdn.simplyrets.com/properties/trial/home-inside-7.jpg"]}},{"id":"1005219","type":"listing","attributes":{"price":13717919,"address":"91910
@@ -59,5 +55,5 @@ http_interactions:
         East GRANICUS Mews #I-7, Houston, Texas 77018","bedrooms":6,"bathrooms":2,"sqft":2955,"photos":["https://s3-us-west-2.amazonaws.com/cdn.simplyrets.com/properties/trial/home14.jpg","https://s3-us-west-2.amazonaws.com/cdn.simplyrets.com/properties/trial/home-inside-14.jpg"]}},{"id":"1005255","type":"listing","attributes":{"price":6070556,"address":"36992
         West Georgetown(lot 18) Boulevard #C 104, Houston, Texas 77429","bedrooms":4,"bathrooms":6,"sqft":1562,"photos":["https://s3-us-west-2.amazonaws.com/cdn.simplyrets.com/properties/trial/home14.jpg","https://s3-us-west-2.amazonaws.com/cdn.simplyrets.com/properties/trial/home-inside-14.jpg"]}},{"id":"1005229","type":"listing","attributes":{"price":80658,"address":"92270
         South 2991 Bryant ST Pl #1573, Houston, Texas 77043","bedrooms":1,"bathrooms":2,"sqft":1562,"photos":["https://s3-us-west-2.amazonaws.com/cdn.simplyrets.com/properties/trial/home4.jpg","https://s3-us-west-2.amazonaws.com/cdn.simplyrets.com/properties/trial/home-inside-4.jpg"]}}]}'
-  recorded_at: Sat, 27 Jul 2024 21:19:26 GMT
+  recorded_at: Sat, 27 Jul 2024 21:19:20 GMT
 recorded_with: VCR 6.2.0
