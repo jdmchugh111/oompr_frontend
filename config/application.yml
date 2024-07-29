@@ -10,8 +10,3 @@
 #   stripe_api_key: sk_live_EeHnL644i6zo4Iyq4v1KdV9H
 #   stripe_publishable_key: pk_live_9lcthxpSIHbGwmdO941O1XVU
 
-development:
-  GOOGLE_CLIENT_ID: Rails.applications.credentials.development[:google_id]
-
-  GOOGLE_CLIENT_SECRET: Rails.applications.credentials.development[:google_secret]
-
