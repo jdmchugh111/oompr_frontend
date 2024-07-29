@@ -4,6 +4,6 @@ class ApplicationController < ActionController::Base
   def current_user
     return unless session[:user_id]
 
-    @_current_user = User.find_by(user_id: session[:user_id])
+    @_current_user ||= User.find_by(id: session[:user_id])
   end
 end
