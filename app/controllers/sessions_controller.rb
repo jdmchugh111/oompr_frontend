@@ -1,58 +1,34 @@
 class SessionsController < ApplicationController
   def create
-    Rails.logger.info "we get here #{request.env["omniauth.auth"]["info"]}" 
+    Rails.logger.info "WE GET HERE #{request.env["omniauth.auth"]}" 
     #inside of request.env["omniauth.auth"]["info"] we have name email 
-    #indise of #{request.env["omniauth.auth"]["provider"]} we have the google oauth 2 or the providers 
+    #inside of request.env["omniauth.auth"]["provider"] we have name of the provider 
+    user = User.from_omniauth(request.env['omniauth.auth'])
 
-    #this is where i would find or create a user 
+    if user.valid?
+      session[:user_id] = user.id
+      redirect_to 'dashboard user path'
+    else 
+      flash[:notice] = "Must create account first"
+      User.create!(user_params)
+      session[:user_id] = user.id
+      redirect_to 'dashboard user path'
+
+    end
   end
 
 
-  # def new
-  #   audience = auth_client_id
-  #   claim = verify_oidc(audience)
+  def new
+  end
 
-  #   if claim
-  #     new_session(claim)
-  #     redirect_to "/dashboard"
-  #   else
-  #     logger.info("No valid identity token present")
-  #     401
-  #   end
-  # end
-
-  # def destroy
-  #   session.clear
-  #   redirect_to "/"
-  # end
+  def destroy
+    session.destroy
+    redirect_to "/"
+  end
 
   private 
 
   def user_params
-    params.permit()
+    params.permit(:name, :email)
   end
-
-  # def auth_client_id
-  #   Google::Auth::ClientId.new(
-  #     Rails.application.credentials.google[:client_id],
-  #     Rails.application.credentials.google[:client_secret]
-  #   ).id
-  # end
-
-  # def verify_oidc(audience)
-  #   Google::Auth::IDTokens.verify_oidc(
-  #     params["credential"],
-  #     aud: audience,
-  #     azp: audience
-  #   )
-  # end
-
-  # def new_session(claim)
-  #   User.find_or_create_by(
-  #     user_id: claim["sub"],
-  #     name: claim["name"]
-  #   )
-  #   session[:user_name] = claim["name"]
-  #   session[:user_id] = claim["sub"]
-  # end
 end
