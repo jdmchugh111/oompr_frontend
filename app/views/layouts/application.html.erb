@@ -1,4 +1,10 @@
 <!DOCTYPE html>
+<% if current_user.present?  %>
+  <%= link_to 'Log Out', '/signout' %>
+<% else %>
+  <%= link_to 'Log In', '/auth/google_oauth2' %>
+<% end %>
+    
 <html>
   <head>
     <title>OomprFrontend</title>
@@ -16,6 +22,7 @@
 
     <!-- Fancybox CSS -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" rel="stylesheet">
+    <%= hotwire_livereload_tags if Rails.env.development? %>
   </head>
 
   <body>

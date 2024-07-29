@@ -27,7 +27,7 @@ gem "stimulus-rails"
 gem "jbuilder"
 
 # Use Redis adapter to run Action Cable in production
-# gem "redis", ">= 4.0.1"
+gem "redis", ">= 4.0.1"
 
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
 # gem "kredis"
@@ -45,6 +45,15 @@ gem "bootsnap", require: false
 # gem "image_processing", "~> 1.2"
 
 gem "faraday"
+
+gem 'omniauth'
+gem 'omniauth-google-oauth2'
+gem "figaro"
+
+# gem "auto-session-timeout"
+# gem "sassc"
+
+
 
 gem 'bootstrap', '~> 5.1.3'
 gem 'sassc-rails'
@@ -69,6 +78,11 @@ end
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
+  gem "sass-rails"
+
+  gem "hotwire-livereload"
+  #this gem will update anything live the only thing after doing the bundle install is doing rails livereload:install
+
 
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
   # gem "rack-mini-profiler"
