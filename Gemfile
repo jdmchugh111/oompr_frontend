@@ -51,9 +51,13 @@ gem 'omniauth-google-oauth2'
 gem "figaro"
 
 # gem "auto-session-timeout"
-gem "sassc"
+# gem "sassc"
 
 
+
+gem 'bootstrap', '~> 5.1.3'
+gem 'sassc-rails'
+gem 'font-awesome-sass', '~> 6.0'
 
 group :test do
   gem "webmock"

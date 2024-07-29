@@ -13,6 +13,9 @@ Rails.application.routes.draw do
 
 
   get "/auth/:provider/callback" => "sessions#create"
-  # post "/signin" => "sessions#new"
   get "/signout" => "sessions#destroy"
+  
+  resources :reality_check, only: [:index]
+
+  resources :listings, only: [:show]
 end

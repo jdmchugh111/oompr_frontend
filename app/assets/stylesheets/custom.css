@@ -1,0 +1,11 @@
+.carousel-item {
+  transition: transform 0.2s ease-in-out !important;
+}
+
+.favorite-icon i {
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.favorite-icon i.fas {
+  transform: scale(1.2);
+}

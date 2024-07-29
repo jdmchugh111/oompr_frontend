@@ -12,12 +12,81 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-    <%= javascript_importmap_tags %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+
+    <!-- Custom CSS -->
+    <%= stylesheet_link_tag 'custom', media: 'all', 'data-turbolinks-track': 'reload' %>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Fancybox CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" rel="stylesheet">
     <%= hotwire_livereload_tags if Rails.env.development? %>
   </head>
 
   <body>
+    <%= render 'layouts/flash_messages' %>
     <%= yield %>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Fancybox JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+
+    <!-- Initialize Fancybox -->
+    <script>
+      $(document).on('turbolinks:load', function() {
+        $('[data-fancybox="gallery"]').fancybox({
+          // Add any custom options here
+        });
+      });
+    </script>
+
+    <! -- Auto Scroll to Form -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        var collapseElement = document.getElementById('incomeFormContainer');
+        var realityCheckButton = document.querySelector('.reality-check-btn');
+
+        realityCheckButton.addEventListener('click', function() {
+          $(collapseElement).on('shown.bs.collapse', function() {
+          collapseElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          $(collapseElement).off('shown.bs.collapse'); // Unbind the event after it's fired
+          });
+        });
+      });
+    </script>
+
+    <!-- Favorite Icon -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        var favoriteIcons = document.querySelectorAll('.favorite-icon');
+
+        favoriteIcons.forEach(function(icon) {
+          icon.addEventListener('click', function(event) {
+            event.preventDefault();
+            var heartIcon = this.querySelector('i');
+            var isFavorite = this.getAttribute('data-favorite') === 'true';
+
+            if (isFavorite) {
+              heartIcon.classList.remove('fas');
+              heartIcon.classList.add('far');
+              this.setAttribute('data-favorite', 'false');
+            } else {
+              heartIcon.classList.remove('far');
+              heartIcon.classList.add('fas');
+              this.setAttribute('data-favorite', 'true');
+            }
+          });
+        });
+      });
+    </script>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
   </body>
 </html>

@@ -1,0 +1,52 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://localhost:3000/api/v1/properties/1005254
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.10.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - '0'
+      X-Content-Type-Options:
+      - nosniff
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Content-Type:
+      - application/json; charset=utf-8
+      Vary:
+      - Accept
+      Etag:
+      - W/"bcb1dca805ef2cde6a7b5c79e6afffe1"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 96ca0726-3f35-49e7-a8bd-9231d8f4ad90
+      X-Runtime:
+      - '0.229860'
+      Server-Timing:
+      - start_processing.action_controller;dur=0.00, process_action.action_controller;dur=224.71
+      Content-Length:
+      - '366'
+    body:
+      encoding: UTF-8
+      string: '{"data":{"id":"1005254","type":"listing","attributes":{"price":22790088,"address":"60843
+        South GAITHER WAY CT #18393, Houston, Texas 77532","bedrooms":4,"bathrooms":2,"sqft":1623,"photos":["https://s3-us-west-2.amazonaws.com/cdn.simplyrets.com/properties/trial/home4.jpg","https://s3-us-west-2.amazonaws.com/cdn.simplyrets.com/properties/trial/home-inside-4.jpg"]}}}'
+  recorded_at: Sat, 27 Jul 2024 21:19:27 GMT
+recorded_with: VCR 6.2.0

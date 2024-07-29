@@ -15,7 +15,7 @@ RSpec.describe 'Landing Page, Welcome Index' do
       expect(page).to have_button('Search')
     end
 
-    it 'I click the search button, brings me to the search results page' do
+    it 'I click the search button, brings me to the search results page', :vcr do
       visit root_path
 
       fill_in :city, with: 'Houston'

@@ -1,0 +1,50 @@
+<div class="container container-custom text-center">
+  <h1 class="oompr-title"><%= link_to 'oompr', root_path, class: 'oompr-title-link' %></h1>
+  <div class="row justify-content-center">
+    <div class="col-md-10">
+      <div class="card mb-4">
+        <div class="row no-gutters">
+          <div class="col-md-8">
+            <div class="row">
+              <div class="photos">
+                <div class="col-12 mb-2">
+                  <a href="<%= @listing.photos.first %>" data-fancybox="gallery" data-caption="Main Photo">
+                    <%= image_tag @listing.photos.first, class: 'img-fluid', alt: 'Listing Image' %>
+                  </a>
+                </div>
+                <% @listing.photos[1..3].each do |photo_url| %>
+                  <div class="col-6 mb-2">
+                    <a href="<%= photo_url %>" data-fancybox="gallery" data-caption="Additional Photo">
+                      <%= image_tag photo_url, class: 'img-fluid', alt: 'Listing Image' %>
+                    </a>
+                  </div>
+                <% end %>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card-body position-relative">
+              <div class="price">
+                <h5 class="card-title"><%= number_to_currency(@listing.price) %></h5>
+              </div>
+              <div class="listing-info">
+                <p class="card-text"><%= @listing.address %></p>
+                <div class="d-flex justify-content-around mb-3">
+                  <span><i class="fas fa-bed"></i> <%= @listing.bedrooms %></span>
+                  <span><i class="fas fa-bath"></i> <%= @listing.bathrooms %></span>
+                  <span><i class="fas fa-expand-arrows-alt"></i> <%= @listing.sqft %> m² </span>
+                </div>
+              </div>
+              <a href="#" class="position-absolute favorite-icon" data-favorite="false" style="top: 10px; right: 10px;">
+                <i class="far fa-heart" style="font-size: 28px; color: red;"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="rc-button">
+        <button class="btn btn-danger btn-lg reality-check-btn">Reality Check</button>
+      </div>
+    </div>
+  </div>
+</div>
