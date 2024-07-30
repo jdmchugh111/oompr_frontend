@@ -37,11 +37,11 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - bcf8fd09-d497-4f2d-b358-f7b55cbdee5a
+      - e1a9f1ca-af2d-4750-8195-66db075effe2
       X-Runtime:
-      - '0.202278'
+      - '0.154590'
       Server-Timing:
-      - start_processing.action_controller;dur=0.00, process_action.action_controller;dur=198.52
+      - start_processing.action_controller;dur=0.00, process_action.action_controller;dur=150.20
       Content-Length:
       - '4325'
     body:
@@ -59,7 +59,7 @@ http_interactions:
         East GRANICUS Mews #I-7, Houston, Texas 77018","bedrooms":6,"bathrooms":2,"sqft":2955,"photos":["https://s3-us-west-2.amazonaws.com/cdn.simplyrets.com/properties/trial/home14.jpg","https://s3-us-west-2.amazonaws.com/cdn.simplyrets.com/properties/trial/home-inside-14.jpg"]}},{"id":"1005255","type":"listing","attributes":{"price":6070556,"address":"36992
         West Georgetown(lot 18) Boulevard #C 104, Houston, Texas 77429","bedrooms":4,"bathrooms":6,"sqft":1562,"photos":["https://s3-us-west-2.amazonaws.com/cdn.simplyrets.com/properties/trial/home14.jpg","https://s3-us-west-2.amazonaws.com/cdn.simplyrets.com/properties/trial/home-inside-14.jpg"]}},{"id":"1005229","type":"listing","attributes":{"price":80658,"address":"92270
         South 2991 Bryant ST Pl #1573, Houston, Texas 77043","bedrooms":1,"bathrooms":2,"sqft":1562,"photos":["https://s3-us-west-2.amazonaws.com/cdn.simplyrets.com/properties/trial/home4.jpg","https://s3-us-west-2.amazonaws.com/cdn.simplyrets.com/properties/trial/home-inside-4.jpg"]}}]}'
-  recorded_at: Sat, 27 Jul 2024 21:19:30 GMT
+  recorded_at: Tue, 30 Jul 2024 03:00:28 GMT
 - request:
     method: get
     uri: http://localhost:3000/api/v1/properties?city=Houston&monthly=375000
@@ -97,11 +97,11 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 293fe5c5-5fad-465a-b5e0-5007a9de841d
+      - c9711c62-f33c-444e-916d-37b7cfa714cb
       X-Runtime:
-      - '0.196729'
+      - '0.173310'
       Server-Timing:
-      - start_processing.action_controller;dur=0.00, process_action.action_controller;dur=193.35
+      - start_processing.action_controller;dur=0.00, process_action.action_controller;dur=169.40
       Content-Length:
       - '2897'
     body:
@@ -115,7 +115,7 @@ http_interactions:
         East GRANICUS Mews #I-7, Houston, Texas 77018","bedrooms":6,"bathrooms":2,"sqft":2955,"photos":["https://s3-us-west-2.amazonaws.com/cdn.simplyrets.com/properties/trial/home14.jpg","https://s3-us-west-2.amazonaws.com/cdn.simplyrets.com/properties/trial/home-inside-14.jpg"]}},{"id":"1005255","type":"listing","attributes":{"price":6070556,"address":"36992
         West Georgetown(lot 18) Boulevard #C 104, Houston, Texas 77429","bedrooms":4,"bathrooms":6,"sqft":1562,"photos":["https://s3-us-west-2.amazonaws.com/cdn.simplyrets.com/properties/trial/home14.jpg","https://s3-us-west-2.amazonaws.com/cdn.simplyrets.com/properties/trial/home-inside-14.jpg"]}},{"id":"1005229","type":"listing","attributes":{"price":80658,"address":"92270
         South 2991 Bryant ST Pl #1573, Houston, Texas 77043","bedrooms":1,"bathrooms":2,"sqft":1562,"photos":["https://s3-us-west-2.amazonaws.com/cdn.simplyrets.com/properties/trial/home4.jpg","https://s3-us-west-2.amazonaws.com/cdn.simplyrets.com/properties/trial/home-inside-4.jpg"]}}]}'
-  recorded_at: Sat, 27 Jul 2024 21:19:30 GMT
+  recorded_at: Tue, 30 Jul 2024 03:00:28 GMT
 - request:
     method: get
     uri: http://localhost:3000/api/v1/properties/1005172
@@ -153,16 +153,16 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 9a56925b-654a-4453-8c8e-1280f48712e6
+      - 07e06a41-5a88-437c-ac62-93ce4c96cd76
       X-Runtime:
-      - '0.207437'
+      - '0.166897'
       Server-Timing:
-      - start_processing.action_controller;dur=0.00, process_action.action_controller;dur=202.03
+      - start_processing.action_controller;dur=0.00, process_action.action_controller;dur=162.68
       Content-Length:
       - '363'
     body:
       encoding: UTF-8
       string: '{"data":{"id":"1005172","type":"listing","attributes":{"price":18730333,"address":"68827
         South 99 CT Estates #783, Houston, Texas 77375","bedrooms":5,"bathrooms":4,"sqft":3477,"photos":["https://s3-us-west-2.amazonaws.com/cdn.simplyrets.com/properties/trial/home4.jpg","https://s3-us-west-2.amazonaws.com/cdn.simplyrets.com/properties/trial/home-inside-4.jpg"]}}}'
-  recorded_at: Sat, 27 Jul 2024 21:19:30 GMT
+  recorded_at: Tue, 30 Jul 2024 03:00:28 GMT
 recorded_with: VCR 6.2.0

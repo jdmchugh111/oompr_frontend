@@ -37,16 +37,16 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 39ceaa99-ad31-4b93-a7e0-fa25270d3da1
+      - 2a7ade0d-5c18-4021-8eb5-4897139d6e3c
       X-Runtime:
-      - '0.224435'
+      - '0.180627'
       Server-Timing:
-      - start_processing.action_controller;dur=0.00, process_action.action_controller;dur=218.72
+      - start_processing.action_controller;dur=0.00, process_action.action_controller;dur=175.21
       Content-Length:
       - '366'
     body:
       encoding: UTF-8
       string: '{"data":{"id":"1005254","type":"listing","attributes":{"price":22790088,"address":"60843
         South GAITHER WAY CT #18393, Houston, Texas 77532","bedrooms":4,"bathrooms":2,"sqft":1623,"photos":["https://s3-us-west-2.amazonaws.com/cdn.simplyrets.com/properties/trial/home4.jpg","https://s3-us-west-2.amazonaws.com/cdn.simplyrets.com/properties/trial/home-inside-4.jpg"]}}}'
-  recorded_at: Sat, 27 Jul 2024 21:19:19 GMT
+  recorded_at: Tue, 30 Jul 2024 03:00:32 GMT
 recorded_with: VCR 6.2.0

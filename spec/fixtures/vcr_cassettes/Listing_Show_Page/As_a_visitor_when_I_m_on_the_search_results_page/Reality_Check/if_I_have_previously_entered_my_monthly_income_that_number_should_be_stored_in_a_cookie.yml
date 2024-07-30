@@ -1,0 +1,150 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://localhost:3000/api/v1/properties/1005254
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.10.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - '0'
+      X-Content-Type-Options:
+      - nosniff
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Content-Type:
+      - application/json; charset=utf-8
+      Vary:
+      - Accept
+      Etag:
+      - W/"bcb1dca805ef2cde6a7b5c79e6afffe1"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 7b205231-3246-4456-a72b-a0465fa287d8
+      X-Runtime:
+      - '0.170653'
+      Server-Timing:
+      - start_processing.action_controller;dur=0.00, process_action.action_controller;dur=166.47
+      Content-Length:
+      - '366'
+    body:
+      encoding: UTF-8
+      string: '{"data":{"id":"1005254","type":"listing","attributes":{"price":22790088,"address":"60843
+        South GAITHER WAY CT #18393, Houston, Texas 77532","bedrooms":4,"bathrooms":2,"sqft":1623,"photos":["https://s3-us-west-2.amazonaws.com/cdn.simplyrets.com/properties/trial/home4.jpg","https://s3-us-west-2.amazonaws.com/cdn.simplyrets.com/properties/trial/home-inside-4.jpg"]}}}'
+  recorded_at: Tue, 30 Jul 2024 03:00:27 GMT
+- request:
+    method: get
+    uri: http://localhost:3000/api/v1/properties/1005254
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.10.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - '0'
+      X-Content-Type-Options:
+      - nosniff
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Content-Type:
+      - application/json; charset=utf-8
+      Vary:
+      - Accept
+      Etag:
+      - W/"bcb1dca805ef2cde6a7b5c79e6afffe1"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 45f61bb3-11b5-4722-bbb2-49ce9811f40f
+      X-Runtime:
+      - '0.158621'
+      Server-Timing:
+      - start_processing.action_controller;dur=0.00, process_action.action_controller;dur=153.53
+      Content-Length:
+      - '366'
+    body:
+      encoding: UTF-8
+      string: '{"data":{"id":"1005254","type":"listing","attributes":{"price":22790088,"address":"60843
+        South GAITHER WAY CT #18393, Houston, Texas 77532","bedrooms":4,"bathrooms":2,"sqft":1623,"photos":["https://s3-us-west-2.amazonaws.com/cdn.simplyrets.com/properties/trial/home4.jpg","https://s3-us-west-2.amazonaws.com/cdn.simplyrets.com/properties/trial/home-inside-4.jpg"]}}}'
+  recorded_at: Tue, 30 Jul 2024 03:00:28 GMT
+- request:
+    method: get
+    uri: http://localhost:3000/api/v1/properties/1005254
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.10.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - '0'
+      X-Content-Type-Options:
+      - nosniff
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Content-Type:
+      - application/json; charset=utf-8
+      Vary:
+      - Accept
+      Etag:
+      - W/"bcb1dca805ef2cde6a7b5c79e6afffe1"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 66663f02-d5fa-4d55-b7c4-cc3a28caf8b6
+      X-Runtime:
+      - '0.160005'
+      Server-Timing:
+      - start_processing.action_controller;dur=0.00, process_action.action_controller;dur=155.62
+      Content-Length:
+      - '366'
+    body:
+      encoding: UTF-8
+      string: '{"data":{"id":"1005254","type":"listing","attributes":{"price":22790088,"address":"60843
+        South GAITHER WAY CT #18393, Houston, Texas 77532","bedrooms":4,"bathrooms":2,"sqft":1623,"photos":["https://s3-us-west-2.amazonaws.com/cdn.simplyrets.com/properties/trial/home4.jpg","https://s3-us-west-2.amazonaws.com/cdn.simplyrets.com/properties/trial/home-inside-4.jpg"]}}}'
+  recorded_at: Tue, 30 Jul 2024 03:00:28 GMT
+recorded_with: VCR 6.2.0
