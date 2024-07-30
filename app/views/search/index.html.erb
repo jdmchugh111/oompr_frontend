@@ -58,7 +58,7 @@
       <%= form_with url: reality_check_index_path, method: :get, local: true do |form| %>
         <div class="form-group">
           <%= form.label :monthly, "Enter your monthly income:" %>
-          <%= form.number_field :monthly, class: "form-control", required: true, min: 0 %>
+          <%= form.number_field :monthly, class: "form-control-sm", required: true, min: 0 %>
         </div>
         <%= form.submit "Submit", class: "btn btn-primary" %>
       <% end %>
