@@ -39,7 +39,7 @@ RSpec.describe "Listing Show Page" do
         expect(page).to have_content('60843 South GAITHER WAY CT #18393, Houston, Texas 77532')
         expect(page).to have_content('4')
         expect(page).to have_content('2')
-        expect(page).to have_content('1623 m²')
+        expect(page).to have_content('1623 ft²')
       end
     end
 
@@ -73,8 +73,8 @@ RSpec.describe "Listing Show Page" do
         expect(page).to have_css('.modal', visible: true)
 
         within('.modal-body') do
-          expect(page).to have_content("What You Make:")
-          expect(page).to have_content("What You Would Need To Make:")
+          expect(page).to have_content("What You Make: $375,000.00")
+          expect(page).to have_content("What You Would Need To Make: $427,314.15")
         end
       end
 
@@ -96,14 +96,3 @@ RSpec.describe "Listing Show Page" do
     end
   end
 end
-
-# As a user, if I'm on a listing show page
-# I should see a "Reality Check" button
-# When I click it, a number field appears and I'm prompted to enter my monthly income
-# (Unless I have previously entered my monthly income, in which case that number should be stored in a cookie)
-# Once submitted, the Reality Check should display:
-# "What You Make: $XXX"
-# "What You Would Need To Make: $XXX"
-
-# maybe just make modal that pops up to tell prices instead of a whole new page?
-# how to store the monthly income in a cookie using the modal, since not going to a controller?

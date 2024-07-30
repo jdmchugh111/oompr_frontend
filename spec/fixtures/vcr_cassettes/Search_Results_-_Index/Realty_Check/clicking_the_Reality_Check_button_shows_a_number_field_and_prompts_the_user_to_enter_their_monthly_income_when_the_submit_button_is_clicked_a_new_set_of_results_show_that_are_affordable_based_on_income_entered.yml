@@ -37,11 +37,11 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 839b1b96-136e-4ef1-9069-49c1da33a470
+      - 20c23bf7-4ad8-4498-aafc-4dfed64e912e
       X-Runtime:
-      - '0.163419'
+      - '0.167644'
       Server-Timing:
-      - start_processing.action_controller;dur=0.00, process_action.action_controller;dur=159.19
+      - start_processing.action_controller;dur=0.00, process_action.action_controller;dur=163.87
       Content-Length:
       - '4325'
     body:
@@ -59,7 +59,7 @@ http_interactions:
         East GRANICUS Mews #I-7, Houston, Texas 77018","bedrooms":6,"bathrooms":2,"sqft":2955,"photos":["https://s3-us-west-2.amazonaws.com/cdn.simplyrets.com/properties/trial/home14.jpg","https://s3-us-west-2.amazonaws.com/cdn.simplyrets.com/properties/trial/home-inside-14.jpg"]}},{"id":"1005255","type":"listing","attributes":{"price":6070556,"address":"36992
         West Georgetown(lot 18) Boulevard #C 104, Houston, Texas 77429","bedrooms":4,"bathrooms":6,"sqft":1562,"photos":["https://s3-us-west-2.amazonaws.com/cdn.simplyrets.com/properties/trial/home14.jpg","https://s3-us-west-2.amazonaws.com/cdn.simplyrets.com/properties/trial/home-inside-14.jpg"]}},{"id":"1005229","type":"listing","attributes":{"price":80658,"address":"92270
         South 2991 Bryant ST Pl #1573, Houston, Texas 77043","bedrooms":1,"bathrooms":2,"sqft":1562,"photos":["https://s3-us-west-2.amazonaws.com/cdn.simplyrets.com/properties/trial/home4.jpg","https://s3-us-west-2.amazonaws.com/cdn.simplyrets.com/properties/trial/home-inside-4.jpg"]}}]}'
-  recorded_at: Tue, 30 Jul 2024 03:00:31 GMT
+  recorded_at: Tue, 30 Jul 2024 16:30:16 GMT
 - request:
     method: get
     uri: http://localhost:3000/api/v1/properties?city=Houston&monthly=375000
@@ -97,11 +97,11 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - f2eb1b3e-6b40-4d8c-ab75-35053344e2e2
+      - f9d0acf7-55f8-4274-9684-8de2467b4930
       X-Runtime:
-      - '0.163377'
+      - '0.158504'
       Server-Timing:
-      - start_processing.action_controller;dur=0.00, process_action.action_controller;dur=159.76
+      - start_processing.action_controller;dur=0.00, process_action.action_controller;dur=154.82
       Content-Length:
       - '2897'
     body:
@@ -115,5 +115,5 @@ http_interactions:
         East GRANICUS Mews #I-7, Houston, Texas 77018","bedrooms":6,"bathrooms":2,"sqft":2955,"photos":["https://s3-us-west-2.amazonaws.com/cdn.simplyrets.com/properties/trial/home14.jpg","https://s3-us-west-2.amazonaws.com/cdn.simplyrets.com/properties/trial/home-inside-14.jpg"]}},{"id":"1005255","type":"listing","attributes":{"price":6070556,"address":"36992
         West Georgetown(lot 18) Boulevard #C 104, Houston, Texas 77429","bedrooms":4,"bathrooms":6,"sqft":1562,"photos":["https://s3-us-west-2.amazonaws.com/cdn.simplyrets.com/properties/trial/home14.jpg","https://s3-us-west-2.amazonaws.com/cdn.simplyrets.com/properties/trial/home-inside-14.jpg"]}},{"id":"1005229","type":"listing","attributes":{"price":80658,"address":"92270
         South 2991 Bryant ST Pl #1573, Houston, Texas 77043","bedrooms":1,"bathrooms":2,"sqft":1562,"photos":["https://s3-us-west-2.amazonaws.com/cdn.simplyrets.com/properties/trial/home4.jpg","https://s3-us-west-2.amazonaws.com/cdn.simplyrets.com/properties/trial/home-inside-4.jpg"]}}]}'
-  recorded_at: Tue, 30 Jul 2024 03:00:31 GMT
+  recorded_at: Tue, 30 Jul 2024 16:30:17 GMT
 recorded_with: VCR 6.2.0
