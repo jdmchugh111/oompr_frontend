@@ -21,8 +21,4 @@ class OomprBeFacade
       Listing.new(listing)
     end
   end
-
-  def geocoder_key
-    Rails.application.credentials.geocoder[:key]
-  end
 end
