@@ -18,4 +18,6 @@ Rails.application.routes.draw do
   resources :reality_check, only: [:index]
 
   resources :listings, only: [:show]
+
+  get 'geocoder/city_from_location'
 end
