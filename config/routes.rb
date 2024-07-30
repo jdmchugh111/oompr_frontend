@@ -16,8 +16,6 @@ Rails.application.routes.draw do
   get "/signout" => "sessions#destroy"
   
   resources :reality_check, only: [:index]
-
-
   resources :listings, only: [:show] do
     post 'reality_check', on: :member
   end
@@ -25,4 +23,5 @@ Rails.application.routes.draw do
 
   get 'geocoder/city_from_location'
 
+  mount RailsPerformance::Engine, at: 'rails/performance'
 end
