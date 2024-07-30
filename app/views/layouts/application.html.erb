@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <% if current_user.present?  %>
   <%= link_to 'Log Out', '/signout' %>
+  <%= current_user.name %>
 <% else %>
   <%= link_to 'Log In', '/auth/google_oauth2' %>
 <% end %>
