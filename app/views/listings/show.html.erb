@@ -32,7 +32,7 @@
                 <div class="d-flex justify-content-around mb-3">
                   <span><i class="fas fa-bed"></i> <%= @listing.bedrooms %></span>
                   <span><i class="fas fa-bath"></i> <%= @listing.bathrooms %></span>
-                  <span><i class="fas fa-expand-arrows-alt"></i> <%= @listing.sqft %> m² </span>
+                  <span><i class="fas fa-expand-arrows-alt"></i> <%= @listing.sqft %> ft² </span>
                 </div>
               </div>
               <a href="#" class="position-absolute favorite-icon" data-favorite="false" style="top: 10px; right: 10px;">
@@ -53,10 +53,10 @@
   <!-- Collapsible Form -->
   <div class="collapse" id="incomeFormContainer" style="margin-top: 20px;">
     <div class="card card-body">
-      <%= form_with url: "#", method: :get, local: true, id: 'incomeForm' do |form| %>
+      <%= form_with url: reality_check_listing_path(@listing.id), method: :post, local: true, id: 'incomeForm', data: {turbo:false} do |form| %>
         <div class="form-group">
           <%= form.label :monthly, "Enter your monthly income:" %>
-          <%= form.number_field :monthly, class: "form-control", required: true, min: 0 %>
+          <%= form.number_field :monthly, class: "form-control", required: true, min: 0, value: cookies[:monthly] %>
         </div>
         <%= form.submit "Submit", class: "btn btn-primary" %>
       <% end %>
@@ -74,8 +74,8 @@
           </button>
         </div>
         <div class="modal-body">
-          <p>What You Make: </p>
-          <p>What You Would Need To Make: </p>
+          <p>What You Make: <%= number_to_currency(cookies[:monthly]) %></p>
+          <p>What You Would Need To Make: <%= number_to_currency(cookies[:required_income]) %></p>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

@@ -21,4 +21,9 @@ class OomprBeFacade
       Listing.new(listing)
     end
   end
+
+  def required_monthly_income(listing_id)
+    listing = get_listing_by_id(listing_id)
+    monthly_income = ((listing.price * 0.075) / 12) * 3
+  end
 end
