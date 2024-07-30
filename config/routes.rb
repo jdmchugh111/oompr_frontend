@@ -17,7 +17,12 @@ Rails.application.routes.draw do
   
   resources :reality_check, only: [:index]
 
-  resources :listings, only: [:show]
+
+  resources :listings, only: [:show] do
+    post 'reality_check', on: :member
+  end
+
 
   get 'geocoder/city_from_location'
+
 end

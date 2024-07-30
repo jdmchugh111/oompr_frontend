@@ -89,6 +89,16 @@
       });
     </script>
 
+    <!-- Inline JavaScript to Show Modal if Flash is Present -->
+    <% if flash[:show_modal] %>
+      <script type="text/javascript">
+      document.addEventListener("DOMContentLoaded", function() {
+        var resultModal = new bootstrap.Modal(document.getElementById('resultModal'));
+        resultModal.show();
+      });
+    </script>
+  <% end %>
+
     <!-- Bootstrap JS and dependencies -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>

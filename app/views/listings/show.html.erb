@@ -32,7 +32,7 @@
                 <div class="d-flex justify-content-around mb-3">
                   <span><i class="fas fa-bed"></i> <%= @listing.bedrooms %></span>
                   <span><i class="fas fa-bath"></i> <%= @listing.bathrooms %></span>
-                  <span><i class="fas fa-expand-arrows-alt"></i> <%= @listing.sqft %> m² </span>
+                  <span><i class="fas fa-expand-arrows-alt"></i> <%= @listing.sqft %> ft² </span>
                 </div>
               </div>
               <a href="#" class="position-absolute favorite-icon" data-favorite="false" style="top: 10px; right: 10px;">
@@ -42,8 +42,44 @@
           </div>
         </div>
       </div>
-      <div class="rc-button">
-        <button class="btn btn-danger btn-lg reality-check-btn">Reality Check</button>
+    </div>
+  </div>
+
+  <!-- Button -->
+  <div class="rc-button">
+    <button type="button" class="btn btn-danger btn-lg reality-check-btn" data-toggle="collapse" data-target="#incomeFormContainer" aria-expanded="false" aria-controls="incomeFormContainer" data-turbolinks="false">Reality Check</button>
+  </div>
+
+  <!-- Collapsible Form -->
+  <div class="collapse" id="incomeFormContainer" style="margin-top: 20px;">
+    <div class="card card-body">
+      <%= form_with url: reality_check_listing_path(@listing.id), method: :post, local: true, id: 'incomeForm', data: {turbo:false} do |form| %>
+        <div class="form-group">
+          <%= form.label :monthly, "Enter your monthly income:" %>
+          <%= form.number_field :monthly, class: "form-control", required: true, min: 0, value: cookies[:monthly] %>
+        </div>
+        <%= form.submit "Submit", class: "btn btn-primary" %>
+      <% end %>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="resultModal" tabindex="-1" role="dialog" aria-labelledby="resultModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="resultModalLabel">Result</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>What You Make: <%= number_to_currency(cookies[:monthly]) %></p>
+          <p>What You Would Need To Make: <%= number_to_currency(cookies[:required_income]) %></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
       </div>
     </div>
   </div>

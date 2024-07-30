@@ -37,11 +37,11 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - ecde459e-5858-4c5e-9717-b31e0de100cd
+      - 9485f093-fa80-4af8-a8d5-f38872a29496
       X-Runtime:
-      - '0.320538'
+      - '0.159651'
       Server-Timing:
-      - start_processing.action_controller;dur=0.00, process_action.action_controller;dur=311.82
+      - start_processing.action_controller;dur=0.01, process_action.action_controller;dur=155.53
       Content-Length:
       - '4325'
     body:
@@ -59,7 +59,7 @@ http_interactions:
         East GRANICUS Mews #I-7, Houston, Texas 77018","bedrooms":6,"bathrooms":2,"sqft":2955,"photos":["https://s3-us-west-2.amazonaws.com/cdn.simplyrets.com/properties/trial/home14.jpg","https://s3-us-west-2.amazonaws.com/cdn.simplyrets.com/properties/trial/home-inside-14.jpg"]}},{"id":"1005255","type":"listing","attributes":{"price":6070556,"address":"36992
         West Georgetown(lot 18) Boulevard #C 104, Houston, Texas 77429","bedrooms":4,"bathrooms":6,"sqft":1562,"photos":["https://s3-us-west-2.amazonaws.com/cdn.simplyrets.com/properties/trial/home14.jpg","https://s3-us-west-2.amazonaws.com/cdn.simplyrets.com/properties/trial/home-inside-14.jpg"]}},{"id":"1005229","type":"listing","attributes":{"price":80658,"address":"92270
         South 2991 Bryant ST Pl #1573, Houston, Texas 77043","bedrooms":1,"bathrooms":2,"sqft":1562,"photos":["https://s3-us-west-2.amazonaws.com/cdn.simplyrets.com/properties/trial/home4.jpg","https://s3-us-west-2.amazonaws.com/cdn.simplyrets.com/properties/trial/home-inside-4.jpg"]}}]}'
-  recorded_at: Sun, 28 Jul 2024 00:54:19 GMT
+  recorded_at: Tue, 30 Jul 2024 16:30:15 GMT
 - request:
     method: get
     uri: http://localhost:3000/api/v1/properties?city=Houston&monthly=1500
@@ -97,15 +97,15 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 11ac118a-086b-4160-aa86-9d2a4f14f86e
+      - 9b3c78de-a071-4664-b7dc-5c691773cf79
       X-Runtime:
-      - '0.219789'
+      - '0.167665'
       Server-Timing:
-      - start_processing.action_controller;dur=0.00, process_action.action_controller;dur=214.62
+      - start_processing.action_controller;dur=0.01, process_action.action_controller;dur=162.75
       Content-Length:
       - '11'
     body:
       encoding: UTF-8
       string: '{"data":[]}'
-  recorded_at: Sun, 28 Jul 2024 00:54:20 GMT
+  recorded_at: Tue, 30 Jul 2024 16:30:15 GMT
 recorded_with: VCR 6.2.0

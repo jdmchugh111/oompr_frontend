@@ -1,5 +1,7 @@
 <% flash.each do |type, message| %>
-  <div class="flash <%= type %>">
-    <%= message %>
-  </div>
+  <% unless type == "show_modal" %>
+    <div class="flash <%= type %>">
+      <%= message %>
+    </div>
+  <% end %>
 <% end %>

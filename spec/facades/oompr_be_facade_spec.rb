@@ -40,4 +40,13 @@ RSpec.describe OomprBeFacade do
       expect(rc_listings[0].price).to be <= 20000000
     end
   end
+
+  describe "#required_monthly_income" do
+    it "returns the required monthly income to afford the listing", :vcr do
+      facade = OomprBeFacade.new
+      required_income = facade.required_monthly_income(1005254)
+
+      expect(required_income).to eq(427314.14999999997)
+    end
+  end
 end

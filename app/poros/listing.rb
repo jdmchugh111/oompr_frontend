@@ -7,7 +7,7 @@ class Listing
               :sqft, 
               :photos
               
-  def initialize(data)
+  def initialize(data) 
     @id = data[:id]
     @price = data[:attributes][:price]
     @address = data[:attributes][:address]

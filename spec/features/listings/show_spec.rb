@@ -39,15 +39,7 @@ RSpec.describe "Listing Show Page" do
         expect(page).to have_content('60843 South GAITHER WAY CT #18393, Houston, Texas 77532')
         expect(page).to have_content('4')
         expect(page).to have_content('2')
-        expect(page).to have_content('1623 m²')
-      end
-    end
-
-    it "I should see a 'Reality Check' button", :vcr do
-      visit listing_path(1005254)
-
-      within('.rc-button') do
-        expect(page).to have_button("Reality Check")
+        expect(page).to have_content('1623 ft²')
       end
     end
 
@@ -55,6 +47,52 @@ RSpec.describe "Listing Show Page" do
     end
 
     it "if not signed in, clicking the heart prompts me to create an account or sign in" do
+    end
+
+    describe "Reality Check" do
+      it "I should see a 'Reality Check' button", :vcr do
+        visit listing_path(1005254)
+
+        within('.rc-button') do
+          expect(page).to have_button("Reality Check")
+        end
+      end
+
+      it "clicking the 'Reality Check' button shows a number field and prompts me to enter my monthly income,
+      when the submit button is clicked, a modal should pop up and show what I make, versus what I would need to make", :vcr do
+        visit listing_path(1005254)
+
+        click_button "Reality Check"
+
+        expect(page).to have_content("Enter your monthly income:")
+
+        fill_in :monthly, with: 375000
+
+        click_button "Submit"
+
+        expect(page).to have_css('.modal', visible: true)
+
+        within('.modal-body') do
+          expect(page).to have_content("What You Make: $375,000.00")
+          expect(page).to have_content("What You Would Need To Make: $427,314.15")
+        end
+      end
+
+      it "if I have previously entered my monthly income, that number should be stored in a cookie", :vcr do
+        visit listing_path(1005254)
+
+        click_button "Reality Check"
+
+        fill_in :monthly, with: 375000
+
+        click_button "Submit"
+
+        visit listing_path(1005254)
+
+        click_button "Reality Check"
+
+        expect(find_field(:monthly).value).to eq('375000')
+      end
     end
   end
 end
