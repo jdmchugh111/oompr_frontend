@@ -1,10 +1,15 @@
 <!DOCTYPE html>
-<% if current_user.present?  %>
-  <%= link_to 'Log Out', '/signout' %>
-  <%= current_user.name %>
-<% else %>
-  <%= link_to 'Log In', '/auth/google_oauth2' %>
-<% end %>
+<div class="header-container d-flex justify-content-end align-items-center bg-danger text-white p-3">
+  <div class="d-flex align-items-center">
+    <% if current_user.present? %>
+      <%= link_to 'Log Out', '/signout', class: 'btn btn-outline-light me-2' %>
+      <span><%= current_user.name %></span>
+    <% else %>
+      <%= link_to 'Log In', '/auth/google_oauth2', class: 'btn btn-outline-light' %>
+    <% end %>
+  </div>
+</div>
+
     
 <html>
   <head>
