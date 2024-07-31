@@ -1,6 +1,6 @@
 class ListingsController < ApplicationController
   def show
-    @listing = OomprBeFacade.new.get_listing_by_id(listing_params[:id])
+    @listing = fetch_listing(listing_params[:id])
   end
 
   def reality_check
@@ -9,7 +9,7 @@ class ListingsController < ApplicationController
       expires: 24.hours.from_now
     }
 
-    required_income = OomprBeFacade.new.required_monthly_income(listing_params[:id])
+    required_income = fetch_required_income(listing_params[:id])
 
     cookies[:required_income] = {
       value: required_income,
@@ -23,6 +23,21 @@ class ListingsController < ApplicationController
   end
 
   private
+
+  def fetch_listing(listing_id)
+    cache_key = "listing_#{listing_id}"
+    Rails.cache.fetch(cache_key, expires_in: 12.hours) do
+      OomprBeFacade.new.get_listing_by_id(listing_id)
+    end
+  end
+
+  def fetch_required_income(listing_id)
+    cache_key = "required_income_#{listing_id}"
+    Rails.cache.fetch(cache_key, expires_in: 24.hours) do
+      OomprBeFacade.new.required_monthly_income(listing_id)
+    end
+  end
+
   def listing_params
     params.permit(:id)
   end
