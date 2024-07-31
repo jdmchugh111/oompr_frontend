@@ -26,4 +26,11 @@ class OomprBeFacade
     listing = get_listing_by_id(listing_id)
     monthly_income = ((listing.price * 0.075) / 12) * 3
   end
+
+  def get_all_favorites_for_user(user)
+    favorites = @service.get_all_favorites(user)[:data]
+    favorites.map do |favorite|
+      Favorite.new(favorite)
+    end
+  end
 end

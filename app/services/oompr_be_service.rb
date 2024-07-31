@@ -23,4 +23,12 @@ class OomprBeService
   def new_favorite(user, listing)
     conn.post("favorites?user=#{user}&listing=#{listing}")
   end
+
+  def get_all_favorites(user)
+    get_url("favorites?user=#{user}")
+  end
+
+  def delete_favorite(favorite)
+    conn.delete("favorites/#{favorite}")
+  end
 end

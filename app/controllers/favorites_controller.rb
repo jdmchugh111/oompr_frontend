@@ -12,5 +12,8 @@ class FavoritesController < ApplicationController
   end
 
   def destroy
+    service = OomprBeService.new
+    service.delete_favorite(params[:fav_id])
+    redirect_to user_path(current_user)
   end
 end
