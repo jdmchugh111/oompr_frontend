@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
 
     if user.valid?
       session[:user_id] = user.id
-      redirect_to '/'
+      redirect_to user_path(user)
     else 
       flash[:notice] = "Must create account first"
       User.create!(user_params)

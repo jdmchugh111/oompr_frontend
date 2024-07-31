@@ -9,17 +9,16 @@ Rails.application.routes.draw do
   # root "posts#index"
 
   root "welcome#index"
-  get "/search", to: "search#index", as: :search
-
-
+  
   get "/auth/:provider/callback" => "sessions#create"
   get "/signout" => "sessions#destroy"
   
+  get "/search", to: "search#index", as: :search
   resources :reality_check, only: [:index]
   resources :listings, only: [:show] do
     post 'reality_check', on: :member
   end
-
+  resources :users, only: [:show]
 
   get 'geocoder/city_from_location'
 
