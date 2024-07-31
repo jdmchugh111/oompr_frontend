@@ -50,3 +50,37 @@
   color: inherit; /* Ensures the color doesn't change on hover */
   text-decoration: none; /* Ensures no underline on hover */
 }
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+.pagination .page {
+  margin: 0 5px;
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  text-decoration: none;
+  color: #007bff;
+  background-color: #fff;
+}
+
+.pagination .page:hover {
+  background-color: #f8f9fa;
+}
+
+.pagination .page.current {
+  font-weight: bold;
+  color: #ffffff;
+  background-color: #007bff;
+  border-color: #007bff;
+  z-index: 1;
+}
+
+.pagination .disabled {
+  color: #6c757d;
+  border-color: #ddd;
+  pointer-events: none;
+}
