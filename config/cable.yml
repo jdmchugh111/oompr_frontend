@@ -7,5 +7,5 @@ test:
 
 production:
   adapter: redis
-  url: <%= ENV.fetch("REDIS_URL") { "redis://localhost:6379/1" } %>
+  url: <%= ENV.fetch("REDIS_URL") { "rediss://:p94b36b64c182887d2a509a9a41a7d8aff5c98f6ed8cf88bbd4ce733bda416f2a@ec2-34-201-226-42.compute-1.amazonaws.com:16440" } %>
   channel_prefix: oompr_frontend_production
