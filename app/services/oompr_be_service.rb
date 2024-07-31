@@ -21,6 +21,6 @@ class OomprBeService
   end
 
   def new_favorite(user, listing)
-    Faraday.post("http://localhost:3000/api/v1/favorites?user=#{user}&listing=#{listing}")
+    conn.post("favorites?user=#{user}&listing=#{listing}")
   end
 end
