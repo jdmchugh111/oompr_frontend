@@ -24,4 +24,6 @@ Rails.application.routes.draw do
   get 'geocoder/city_from_location'
 
   mount RailsPerformance::Engine, at: 'rails/performance'
+
+  resources :favorites, only: [:create, :destroy]
 end
