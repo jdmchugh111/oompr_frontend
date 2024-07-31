@@ -3,7 +3,7 @@
   <div class="d-flex align-items-center">
     <% if current_user.present? %>
       <%= link_to 'Log Out', '/signout', class: 'btn btn-outline-light me-2' %>
-      <span><%= current_user.name %></span>
+      <span><%= link_to current_user.name, user_path(current_user), class: 'white-link' %></span>
     <% else %>
       <%= link_to 'Log In', '/auth/google_oauth2', class: 'btn btn-outline-light' %>
     <% end %>

@@ -90,6 +90,8 @@ group :development do
   # gem "spring"
 end
 
+gem 'kaminari'
+
 group :development, :test do
   gem 'rails_performance'
 end

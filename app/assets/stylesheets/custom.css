@@ -9,3 +9,28 @@
 .favorite-icon i.fas {
   transform: scale(1.2);
 }
+
+.white-link {
+  color: #F8F9FA;
+  text-decoration: none;
+}
+
+.white-link:hover {
+  color: #F8F9FA;
+}
+
+.user-info {
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.user-name {
+  font-weight: bold;
+  font-size: 24px;
+}
+
+.saved-listings {
+  font-size: 18px;
+  color: #555;
+  margin-top: 10px;
+}
