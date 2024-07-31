@@ -7,7 +7,7 @@ class SearchController < ApplicationController
     }
     city = cookies[:city]
     
-    @listings = Kaminari.paginate_array(fetch_listings_by_city(city))).page(params[:page]).per(3)
+    @listings = Kaminari.paginate_array(fetch_listings_by_city(city)).page(params[:page]).per(3)
 
     if @listings.empty?
       flash[:notice] = "No listings found. Please try again."
