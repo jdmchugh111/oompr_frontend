@@ -53,6 +53,9 @@ gem "figaro"
 # gem "auto-session-timeout"
 # gem "sassc"
 
+gem 'kaminari'
+
+gem 'rails_performance'
 
 gem 'bootstrap', '~> 5.1.3'
 gem 'sassc-rails'
@@ -90,8 +93,6 @@ group :development do
   # gem "spring"
 end
 
-gem 'kaminari'
 
-group :development, :test do
-  gem 'rails_performance'
-end
+
+
