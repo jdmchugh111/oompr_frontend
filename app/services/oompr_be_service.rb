@@ -19,4 +19,16 @@ class OomprBeService
   def reality_check(city, monthly)
     get_url("properties?city=#{city}&monthly=#{monthly}")
   end
+
+  def new_favorite(user, listing)
+    conn.post("favorites?user=#{user}&listing=#{listing}")
+  end
+
+  def get_all_favorites(user)
+    get_url("favorites?user=#{user}")
+  end
+
+  def delete_favorite(favorite)
+    conn.delete("favorites/#{favorite}")
+  end
 end

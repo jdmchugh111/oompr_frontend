@@ -1,10 +1,10 @@
 class UsersController < ApplicationController
   def show
-    @favorites = []
-    # @favorites = fetch_favorites_for_user(current_user.id)
+    facade = OomprBeFacade.new
+    @favorites = facade.get_all_favorites_for_user(current_user.id)
   end
 
-  # private
+  private
 
   # def fetch_favorites_for_user(current_user.id)
   #   cache_key = "get_all_favorites_for_user_#{current_user.id}"
