@@ -1,12 +1,11 @@
 class SearchController < ApplicationController
   def index
-
     cookies[:city] = {
       value: search_params[:city],
       expires: 24.hours.from_now
     }
     city = cookies[:city]
-    
+
     @listings = Kaminari.paginate_array(fetch_listings_by_city(city)).page(params[:page]).per(3)
 
     if @listings.empty?
