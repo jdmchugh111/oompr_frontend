@@ -1,6 +1,5 @@
 class SearchController < ApplicationController
   def index
-    
     cookies[:city] = {
       value: search_params[:city],
       expires: 24.hours.from_now
