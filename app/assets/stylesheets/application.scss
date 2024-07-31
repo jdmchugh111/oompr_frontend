@@ -50,3 +50,78 @@
   color: inherit; /* Ensures the color doesn't change on hover */
   text-decoration: none; /* Ensures no underline on hover */
 }
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+.pagination .page {
+  margin: 0 5px;
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  text-decoration: none;
+  color: #007bff;
+  background-color: #fff;
+}
+
+.pagination .page:hover {
+  background-color: #f8f9fa;
+}
+
+.pagination .page.current {
+  font-weight: bold;
+  color: #ffffff;
+  background-color: #007bff;
+  border-color: #007bff;
+  z-index: 1;
+}
+
+.pagination .disabled {
+  color: #6c757d;
+  border-color: #ddd;
+  pointer-events: none;
+}
+
+.listing-content {
+  display: flex; /* Use flexbox for horizontal alignment */
+  align-items: flex-start; /* Align items to the start of the container */
+}
+
+.image-container {
+  flex-shrink: 0; /* Prevent the image from shrinking */
+}
+
+.img-large {
+  width: 150px; /* Adjust to your preferred size */
+  height: auto; /* Maintain aspect ratio */
+  display: block; /* Ensure the image is displayed correctly */
+}
+
+.text-info {
+  flex-grow: 1; /* Allow the text info to take up the remaining space */
+}
+
+.ml-3 {
+  margin-left: 1rem; /* Add some space between the image and text */
+}
+
+.card-body {
+  padding: 1rem; /* Adjust padding as needed */
+}
+
+.card-custom {
+  position: relative;
+  /* Ensure no extra margin or padding affecting layout */
+}
+
+.delete-form {
+  margin-top: -1px; /* Adjust if necessary to eliminate any gap */
+}
+
+.btn-danger {
+  margin: 0; /* Remove any default margin */
+  border-radius: 0; /* Optional: match card corners if desired */
+}

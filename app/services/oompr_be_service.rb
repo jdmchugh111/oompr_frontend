@@ -1,6 +1,6 @@
 class OomprBeService
   def conn
-    Faraday.new(url: "http://localhost:3000/api/v1/")
+    Faraday.new(url: "https://whispering-cliffs-26803-3cc31fb2a950.herokuapp.com/api/v1/")
   end
 
   def get_url(url)
@@ -18,5 +18,17 @@ class OomprBeService
 
   def reality_check(city, monthly)
     get_url("properties?city=#{city}&monthly=#{monthly}")
+  end
+
+  def new_favorite(user, listing)
+    conn.post("favorites?user=#{user}&listing=#{listing}")
+  end
+
+  def get_all_favorites(user)
+    get_url("favorites?user=#{user}")
+  end
+
+  def delete_favorite(favorite)
+    conn.delete("favorites/#{favorite}")
   end
 end

@@ -35,10 +35,29 @@
                   <span><i class="fas fa-expand-arrows-alt"></i> <%= @listing.sqft %> ft² </span>
                 </div>
               </div>
-              <a href="#" class="position-absolute favorite-icon" data-favorite="false" style="top: 10px; right: 10px;">
-                <i class="far fa-heart" style="font-size: 28px; color: red;"></i>
-              </a>
-            </div>
+              <div>
+              <%= form_with url: favorites_path, method: :post, local: true, id: 'favorite-form' do %>
+                <%= hidden_field_tag :favorite, 'false', id: 'favorite-field' %>
+                <%= hidden_field_tag :id, @listing.id %>
+                <a href="#" class="position-absolute favorite-icon" 
+                   data-favorite="" 
+                   style="top: 10px; right: 10px;"
+                   onclick="toggleFavorite(event);">
+                  <i class="far fa-heart" style="font-size: 28px; color: red;"></i>
+                </a>
+                <%= submit_tag 'Update Favorite', style: 'display: none;' %>
+              <% end %>
+              
+              <script>
+                function toggleFavorite(event) {
+                  event.preventDefault(); // Prevent the default anchor behavior
+                  var favoriteField = document.getElementById('favorite-field');
+                  var currentValue = favoriteField.value;
+                  favoriteField.value = currentValue === 'true' ? 'false' : 'true';
+                  document.getElementById('favorite-form').submit(); // Submit the form
+                }
+              </script>              
+              </div>
           </div>
         </div>
       </div>
