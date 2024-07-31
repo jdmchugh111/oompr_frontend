@@ -1,7 +1,7 @@
 class SearchController < ApplicationController
   def index
     @facade = OomprBeFacade.new
-    @listings = @facade.search_listings_by_city(search_params[:city])
+    @listings = Kaminari.paginate_array(@facade.search_listings_by_city(search_params[:city])).page(params[:page]).per(3)
     if @listings.empty?
       flash[:notice] = "No listings found. Please try again." 
       redirect_to root_path
