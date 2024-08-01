@@ -1,4 +1,4 @@
-![Oompr Banner](Screenshot 2024-08-01 at 12.15.04 PM.png)
+![Oompr Banner](assets/images/Screenshot 2024-08-01 at 12.15.04 PM.png)
 
 # Oompr Frontend
 
