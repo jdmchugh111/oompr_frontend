@@ -34,6 +34,7 @@ This project is part of a full-stack application, with the backend handling data
   
   ![Feature Demonstration](assets/gifs/ScreenRecording2024-08-01at3.22.36PM-ezgif.com-video-to-gif-converter.gif)
 - **OAuth Integration:** Users can create accounts and log in using OAuth, providing a seamless and secure authentication process.
+  
   ![Oompr Banner](https://github.com/user-attachments/assets/799312ee-1f6b-4976-8526-c10f0539154a) ![Oompr Banner](https://github.com/user-attachments/assets/20578772-a10a-43b0-9191-160c8b7e0770)
 - **Responsive Design:** The application is mobile-first, ensuring usability across devices.
 
