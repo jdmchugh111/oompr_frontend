@@ -166,7 +166,7 @@ Testing ensures the reliability and functionality of the application. Here's how
 - **Run Tests:**
 
   ```bash
-  rails test
+  bundle exec rspec
   ```
 
 - **Testing Frameworks:** The project utilizes [RSpec](https://rspec.info/) and [Capybara](https://teamcapybara.github.io/capybara/) for unit and integration tests.
