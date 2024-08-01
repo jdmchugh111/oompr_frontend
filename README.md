@@ -25,13 +25,16 @@ This project is part of a full-stack application, with the backend handling data
 ## Features
 
 - **Search by Location:** Users can search for properties by entering a city or using geolocation services.
-  ![Feature Demonstration](https://github.com/user-attachments/assets/080e5004-f109-4ab9-af1e-40e017a642ca)
-  
 - **Property Listings:** View a list of properties with brief details.
+    ![Feature Demonstration](assets/gifs/ScreenRecording2024-08-01at2.34.23PM-ezgif.com-video-to-gif-converter.gif)
 - **Detailed Property View:** Access comprehensive information about each property, including images, descriptions, and pricing.
 - **Favorites:** Logged-in users can save properties to their favorites for easy access.
+  ![Feature Demonstration](assets/gifs/ScreenRecording2024-08-01at2.57.43PM-ezgif.com-video-to-gif-converter.gif)
 - **Reality Check:** A unique feature that allows users to input their monthly income to receive a set of property listings they can potentially afford.
+  
+  ![Feature Demonstration](assets/gifs/ScreenRecording2024-08-01at3.22.36PM-ezgif.com-video-to-gif-converter.gif)
 - **OAuth Integration:** Users can create accounts and log in using OAuth, providing a seamless and secure authentication process.
+  ![Oompr Banner](https://github.com/user-attachments/assets/799312ee-1f6b-4976-8526-c10f0539154a) ![Oompr Banner](https://github.com/user-attachments/assets/20578772-a10a-43b0-9191-160c8b7e0770)
 - **Responsive Design:** The application is mobile-first, ensuring usability across devices.
 
 ## Installation
