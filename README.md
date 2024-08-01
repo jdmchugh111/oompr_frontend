@@ -1,4 +1,4 @@
-![Oompr Banner](assets/images/Screenshot 2024-08-01 at 12.15.04 PM.png)
+![Oompr Banner](https://github.com/user-attachments/assets/d1557494-52c6-47fd-9727-6ae98a812281)
 
 # Oompr Frontend
 
@@ -25,6 +25,8 @@ This project is part of a full-stack application, with the backend handling data
 ## Features
 
 - **Search by Location:** Users can search for properties by entering a city or using geolocation services.
+  ![Feature Demonstration](https://github.com/user-attachments/assets/080e5004-f109-4ab9-af1e-40e017a642ca)
+  
 - **Property Listings:** View a list of properties with brief details.
 - **Detailed Property View:** Access comprehensive information about each property, including images, descriptions, and pricing.
 - **Favorites:** Logged-in users can save properties to their favorites for easy access.
