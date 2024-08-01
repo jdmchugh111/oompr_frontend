@@ -91,6 +91,52 @@ After starting the server, you can navigate through the application using the fo
 - **View Property Details:** Click on any property listing to see more detailed information.
 - **Manage Favorites:** Sign in to save properties to your favorites list and view them later.
 - **Reality Check Feature:** Enter your monthly income to activate the "Reality Check" feature, which will provide a new set of property listings that align with your budget. This feature helps users understand what they can realistically afford in the real estate market.
+
+# Google OAuth Setup Guide
+
+<details>
+  <summary><strong>Step 1: Create a Google Cloud Project</strong></summary>
+
+1. Go to the [Google Cloud Console](https://console.cloud.google.com/).
+2. Create a new project.
+3. Navigate to **APIs & Services** > **OAuth consent screen**.
+4. Set up your consent screen with necessary details.
+5. Navigate to **Credentials** and create OAuth 2.0 Client IDs.
+6. Configure the **Authorized redirect URIs** (e.g., `http://localhost:5000/auth/google_oauth2/callback`).
+7. Save your **Client ID** and **Client Secret**.
+
+</details>
+
+<details>
+  <summary><strong>Step 2: Configure Your Rails App</strong></summary>
+
+1. Add the following gems to your `Gemfile`:
+
+    ```ruby
+    gem 'omniauth'
+    gem 'omniauth-google-oauth2'
+    gem 'figaro'
+    ```
+
+2. Run `bundle install` and then `figaro install` to create `config/application.yml`.
+
+3. Add your Google credentials to `config/application.yml`:
+
+    ```yaml
+    GOOGLE_CLIENT_ID: "your_google_client_id"
+    GOOGLE_CLIENT_SECRET: "your_google_client_secret"
+    ```
+
+4. Create `config/initializers/omniauth.rb`:
+
+    ```ruby
+    Rails.application.config.middleware.use OmniAuth::Builder do
+      provider :google_oauth2, ENV['GOOGLE_CLIENT_ID'], ENV['GOOGLE_CLIENT_SECRET']
+    end
+    ```
+
+</details>
+
 - **OAuth Authentication:** Use Google OAuth to create an account or log in. This feature simplifies the authentication process, enhancing security and user experience.
 
 ## Configuration
@@ -124,6 +170,6 @@ Testing ensures the reliability and functionality of the application. Here's how
 
 ## Contributors
 
-- Rodrigo Chaves - [Github](https://github.com/RodrigoACG) - [LinkedIn](https://www.linkedin.com/in/rodrigo-chavez1/)
+- Rodrigo Chavez - [Github](https://github.com/RodrigoACG) - [LinkedIn](https://www.linkedin.com/in/rodrigo-chavez1/)
 - James McHugh - [Github](https://github.com/jdmchugh111) - [LinkedIn](https://www.linkedin.com/in/jdmchugh111/)
 - Zach Bergman - [Github](https://github.com/zach-bergman) - [LinkedIn](https://www.linkedin.com/in/zacherybergman/)
